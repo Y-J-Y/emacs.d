@@ -1,4 +1,3 @@
-;; Chinese return in org mode
 (add-hook 'org-mode-hook
 	  (lambda () (setq truncate-lines nil)))
 
@@ -16,6 +15,8 @@
 ;; set org-ref
 (require-package 'org-ref)
 (require 'org-ref)
+
+
 (setq org-ref-default-bibliography '("~/org/knowledge/Bibliography/ref/library.bib")
       org-ref-pdf-directory "~/org/knowledge/Bibliography/bibtex-pdfs"
       org-ref-bibliography-notes "~/org/knowledge/Bibliography/papers.org")
@@ -54,5 +55,11 @@
 (require-package 'auctex)
 (require-package 'cdlatex)
 (add-hook 'LaTex-mode-hook 'turn-on-cdlatex)
+
+;; no ".~" files
+(setq make-backup-files nil)
+
+;;cua mode
+(cua-mode 1)
 
 (provide 'init-local)
